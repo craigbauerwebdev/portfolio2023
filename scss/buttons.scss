@@ -1,0 +1,17 @@
+@import "./variables.scss";
+
+.main-buttons {
+  button {
+    margin-top: 40px;
+    margin-right: 20px;
+  }
+}
+
+@media screen and (max-width: $breakpoint + "px") {
+  .main-buttons {
+    button {
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+  }
+}

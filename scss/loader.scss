@@ -1,0 +1,55 @@
+@import "./variables.scss";
+
+body {
+  .loading-screen {
+    .loader-wrap {
+      padding: 100px 0 65px 0;
+    }
+    .loader {
+      text-align: center;
+      border: 12px solid #405464;
+      border-radius: 50%;
+      border-top: 12px solid transparent;
+      width: 50px;
+      height: 50px;
+      margin: 0 auto;
+      -webkit-animation: spin 1s linear infinite; /* Safari */
+      animation: spin 1s linear infinite;
+      opacity: 0.5;
+    }
+    p {
+      color: #405464;
+      font-size: 24px;
+      margin-top: 10px;
+      opacity: 0.5;
+      text-align: center;
+    }
+    /* Safari */
+    @-webkit-keyframes spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
+
+/* @media screen and (max-width: $breakpoint + "px") {
+  footer {
+    .inner {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}
+ */

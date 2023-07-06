@@ -1,0 +1,107 @@
+@import "variables";
+
+p.welcome {
+  padding: 5px 15px 0 15px;
+  background: $primary-color;
+  text-align: right;
+  color: $white;
+}
+
+header {
+  background: $transparent;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  padding: 10px 20px 5px 20px;
+  z-index: 9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h1 {
+    font-size: 36px;
+    font-family: "Roboto Slab", serif;
+    color: #fff;
+  }
+
+  .logo {
+    width: 315px;
+    margin-top: 3px;
+    margin-bottom: 8px;
+    @include bp(mobile) {
+      width: 85%;
+      max-width: 315px;
+    }
+  }
+  span,
+  a {
+    color: $white;
+    padding-left: 30px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .number {
+    color: $yellow;
+  }
+
+  .close {
+    font-size: 60px;
+    margin-right: -5px;
+  }
+
+  .mobile-menu-icon {
+    display: none;
+    color: $white;
+    position: absolute;
+    font-size: 30px;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-55%);
+    cursor: pointer;
+    @include bp("tablet") {
+      display: block;
+    }
+  }
+  .desktop-menu {
+    svg {
+      height: 24px;
+      margin-bottom: -5px;
+    }
+    @include bp("tablet") {
+      display: none;
+    }
+  }
+}
+
+.mobile-menu-wrap {
+  position: fixed;
+  width: 100%;
+  top: 92px;
+  background: $transparent; //rgba(64, 84, 100, 0.8);
+  display: none;
+  @include bp("tablet") {
+    display: block;
+  }
+  .mobile-menu {
+    svg {
+      margin: 15px;
+    }
+    > div {
+      padding: 30px 0;
+      border-bottom: 1px solid $grey;
+    }
+    text-align: center;
+    padding: 15px;
+    border-top: 1px solid #222;
+    .link {
+      font-size: 20px;
+      font-weight: bold;
+      color: $white;
+      margin-bottom: 0;
+      cursor: pointer;
+    }
+    .number {
+      color: $yellow;
+    }
+  }
+}

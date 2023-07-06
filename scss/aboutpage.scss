@@ -1,0 +1,51 @@
+@import "./variables.scss";
+
+.about-page {
+  .bio-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+
+    @include bp("mobile") {
+      flex-direction: column;
+    }
+    .left {
+      width: 300px;
+      margin-right: 30px;
+      @include bp("mobile") {
+        margin: 0 auto 30px;
+        max-width: 400px;
+        width: 100%;
+      }
+      img {
+        width: 100%;
+      }
+      .dev-icons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        img {
+          width: 18%;
+        }
+      }
+    }
+    .right {
+      width: 100%;
+      p {
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 200px;
+        margin: 0px 0px 30px;
+        //max-width: 540px;
+      }
+    }
+  }
+  p {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 200px;
+    margin: 40px 0px 0px;
+    //max-width: 540px;
+  }
+  padding: 180px 0;
+}

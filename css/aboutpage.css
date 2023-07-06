@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Oswald:wght@200;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lato:wght@300&family=Oswald:wght@200;500&display=swap");
+.about-page {
+  padding: 180px 0;
+}
+.about-page .bio-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+}
+@media only screen and (max-width: 600px) {
+  .about-page .bio-container {
+    flex-direction: column;
+  }
+}
+.about-page .bio-container .left {
+  width: 300px;
+  margin-right: 30px;
+}
+@media only screen and (max-width: 600px) {
+  .about-page .bio-container .left {
+    margin: 0 auto 30px;
+    max-width: 400px;
+    width: 100%;
+  }
+}
+.about-page .bio-container .left img {
+  width: 100%;
+}
+.about-page .bio-container .left .dev-icons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.about-page .bio-container .left .dev-icons img {
+  width: 18%;
+}
+.about-page .bio-container .right {
+  width: 100%;
+}
+.about-page .bio-container .right p {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 200px;
+  margin: 0px 0px 30px;
+}
+.about-page p {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 200px;
+  margin: 40px 0px 0px;
+}

@@ -1,0 +1,44 @@
+@import "./variables.scss";
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  //background: $transparent;
+  color: $white;
+  padding: 30px;
+  text-align: center;
+
+  a {
+    color: $white;
+  }
+
+  img {
+    width: 90%;
+    max-width: 400px;
+  }
+  svg {
+    margin: 30px;
+  }
+
+  .inner {
+    .social-wrapper {
+      display: flex;
+      flex-direction: row;
+    }
+    .footer-logo {
+      h2 {
+        font-size: 42px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint + "px") {
+  footer {
+    .inner {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}
