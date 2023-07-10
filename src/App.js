@@ -14,12 +14,6 @@ const App = () => {
     ? "http://localhost:8888/portfolio"
     : "https://craigbauer.dev";
 
-  /*if (vendors || allData) {
-    return <Loader />;
-  }*/
-
-  //console.table(allData);
-
   return (
     <div>
       <SplashScreen baseUrl={baseUrl} />
