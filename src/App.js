@@ -28,7 +28,7 @@ const App = () => {
         <HomePage baseUrl={baseUrl} />
         <AboutPage baseUrl={baseUrl} />
         <ExperiencePage />
-        <ProjectsPage />
+        <ProjectsPage baseUrl={apiBase} />
         <ContactPage baseUrl={baseUrl} />
       </main>
       <Footer baseUrl={baseUrl} />

@@ -1,6 +1,24 @@
-//const { useEffect, useState } = wp.element;
+const { useEffect, useState } = wp.element;
+import getPayload from "../../utils/getPayload";
+//import Loader from "../Components/GeneralPurpose/Loader";
 
 const ProjectsPage = ({ baseUrl }) => {
+  //const apiBase = "https://craigbauer.dev/wp-json/cb/v1/"; //"https://craigbauer.dev/wp-json/cb/v1/";
+  const [projects, setProjects] = useState([]);
+
+  useEffect(async () => {
+    const results = await getPayload(`${baseUrl}/wp-json/cb/v1/`, "projects");
+    //console.log("results", results);
+    setProjects(results);
+    /* results.map((x) => {
+      console.log(x.title);
+    }); */
+  }, []);
+
+  if (!projects || projects === []) {
+    <h1>Loading</h1>;
+  }
+
   return (
     <>
       <div id="projects-page" className="projects-page">
