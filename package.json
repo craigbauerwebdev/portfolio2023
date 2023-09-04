@@ -26,9 +26,14 @@
     "@wordpress/scripts": "^22.3.0"
   },
   "dependencies": {
+    "@types/jest": "^29.5.4",
+    "@types/node": "^20.5.9",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
     "axios": "^0.26.1",
     "firebase": "^9.6.10",
     "react-redux": "^7.2.6",
-    "redux-thunk": "^2.4.1"
+    "redux-thunk": "^2.4.1",
+    "typescript": "^5.2.2"
   }
 }

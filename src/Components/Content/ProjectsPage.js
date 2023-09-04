@@ -10,9 +10,9 @@ const ProjectsPage = ({ baseUrl }) => {
     const results = await getPayload(`${baseUrl}/wp-json/cb/v1/`, "projects");
     //console.log("results", results);
     setProjects(results);
-    /* results.map((x) => {
+    results.map((x) => {
       console.log(x.title);
-    }); */
+    });
   }, []);
 
   if (!projects || projects === []) {
