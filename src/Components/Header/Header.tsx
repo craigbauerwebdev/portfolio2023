@@ -1,8 +1,13 @@
-const { useEffect, useState } = wp.element;
+//const { useEffect, useState } = wp.element;
+import React, { useState } from "react";
 import Social from "../Social/Social";
 
-const Header = ({ baseUrl }) => {
-  const [showMobileMenu, setShowMobileMenu] = useState(null);
+interface HeaderProps {
+  baseUrl: string;
+}
+
+const Header: React.FC<HeaderProps> = ({ baseUrl }) => {
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   const showMenu = () => {
     setShowMobileMenu(true);
@@ -11,11 +16,11 @@ const Header = ({ baseUrl }) => {
     setShowMobileMenu(false);
   };
 
-  const scrollTo = (el, menu) => {
-    if (menu === "mobile") {
+  const scrollTo = (page: string, menuType: string) => {
+    if (menuType === "mobile") {
       setShowMobileMenu(false);
     }
-    const elmntToView = document.getElementById(el);
+    const elmntToView = document.getElementById(page)!;
     elmntToView.scrollIntoView();
   };
 
@@ -23,23 +28,35 @@ const Header = ({ baseUrl }) => {
     <>
       <header>
         <img
-          onClick={() => scrollTo("home-page")}
+          onClick={() => scrollTo("home-page", "desktop")}
           alt="CBD logo"
           className="logo"
           src={`${baseUrl}/wp-content/themes/portfolio/images/cb-logo1.png`}
         />
         <div className="desktop-menu">
-          <span className="link" onClick={() => scrollTo("about-page")}>
-            <span class="number">01.</span> about me
+          <span
+            className="link"
+            onClick={() => scrollTo("about-page", "desktop")}
+          >
+            <span className="number">01.</span> about me
           </span>
-          <span className="link" onClick={() => scrollTo("experience-page")}>
-            <span class="number">02.</span> experience
+          <span
+            className="link"
+            onClick={() => scrollTo("experience-page", "desktop")}
+          >
+            <span className="number">02.</span> experience
           </span>
-          <span className="link" onClick={() => scrollTo("projects-page")}>
-            <span class="number">03.</span> projects
+          <span
+            className="link"
+            onClick={() => scrollTo("projects-page", "desktop")}
+          >
+            <span className="number">03.</span> projects
           </span>
-          <span className="link" onClick={() => scrollTo("contact-page")}>
-            <span class="number">04.</span> contact/resume
+          <span
+            className="link"
+            onClick={() => scrollTo("contact-page", "desktop")}
+          >
+            <span className="number">04.</span> contact/resume
           </span>
           <Social />
         </div>
@@ -61,25 +78,25 @@ const Header = ({ baseUrl }) => {
                 className="link"
                 onClick={() => scrollTo("about-page", "mobile")}
               >
-                <span class="number">01.</span> about me
+                <span className="number">01.</span> about me
               </div>
               <div
                 className="link"
                 onClick={() => scrollTo("experience-page", "mobile")}
               >
-                <span class="number">02.</span> experience
+                <span className="number">02.</span> experience
               </div>
               <div
                 className="link"
                 onClick={() => scrollTo("projects-page", "mobile")}
               >
-                <span class="number">03.</span> projects
+                <span className="number">03.</span> projects
               </div>
               <div
                 className="link"
                 onClick={() => scrollTo("contact-page", "mobile")}
               >
-                <span class="number">04.</span> resume
+                <span className="number">04.</span> resume
               </div>
               <Social />
             </div>

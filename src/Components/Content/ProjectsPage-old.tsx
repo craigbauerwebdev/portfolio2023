@@ -1,35 +1,53 @@
-const { useEffect, useState } = wp.element;
+//const { useEffect, useState } = wp.element;
+import React, { useEffect, useState } from "react";
 import getPayload from "../../utils/getPayload";
-//import Loader from "../Components/GeneralPurpose/Loader";
+import Loader from "../GeneralPurpose/Loader";
 
 const ProjectsPage = ({ baseUrl }) => {
-  //const apiBase = "https://craigbauer.dev/wp-json/cb/v1/"; //"https://craigbauer.dev/wp-json/cb/v1/";
-  const [projects, setProjects] = useState([]);
+  //const apiBase = "https://craigbauer.dev/wp-json/cb/v1/"; //"https://craigbauer.dev/wp-json/cb/v1/"; //testing only
+  const [projects, setProjects] = useState<
+    {
+      id: Number;
+      title: String;
+      description: String;
+      fimg_url: String;
+      project_url: String;
+    }[]
+  >([]);
 
-  useEffect(async () => {
-    const results = await getPayload(`${baseUrl}/wp-json/cb/v1/`, "projects");
-    //console.log("results", results);
-    setProjects(results);
-    results.map((x) => {
-      console.log(x.title);
-    });
+  useEffect(() => {
+    console.log(baseUrl);
+
+    (async () => {
+      console.log("Before Await");
+      const results = await getPayload(`${baseUrl}/wp-json/cb/v1/`, "projects");
+      console.log("Before Setting State: ", results);
+      setProjects(results); // type void not assignable to the SetState
+    })();
+    //func();
+    console.log("After Async");
+    //return results;
+
+    /* results.map((x) => {
+      console.log(x); // use state in return
+    }); */
   }, []);
 
-  if (!projects || projects === []) {
-    <h1>Loading</h1>;
+  if (!projects) {
+    <Loader />;
   }
 
   return (
     <>
       <div id="projects-page" className="projects-page">
         <h2>
-          <span class="yellow">03.</span> Projects
+          <span className="yellow">03.</span> Projects
         </h2>
 
         <div id="projects" class="grid">
           <a
             href="https://github.com/craigbauerwebdev/Portfolio"
-            class="tile"
+            className="tile"
             target="blank"
           >
             <h2>Fullstack Portfolio</h2>
@@ -37,7 +55,7 @@ const ProjectsPage = ({ baseUrl }) => {
           </a>
           <a
             href="https://github.com/craigbauerwebdev/tartanbook"
-            class="tile"
+            className="tile"
             target="blank"
           >
             <h2>Tartanbook</h2>
@@ -48,7 +66,7 @@ const ProjectsPage = ({ baseUrl }) => {
           </a>
           <a
             href="https://github.com/craigbauerwebdev/earthquaketracker"
-            class="tile"
+            className="tile"
             target="blank"
           >
             <h2>Earthquake Tracker</h2>

@@ -20,7 +20,7 @@ const App: React.FC = () => {
       <SplashScreen baseUrl={baseUrl} />
       <Header baseUrl={baseUrl} />
       <main>
-        <HomePage baseUrl={baseUrl} />
+        <HomePage />
         <AboutPage baseUrl={baseUrl} />
         <ExperiencePage />
         <ProjectsPage baseUrl={baseUrl} />
