@@ -1,7 +1,8 @@
 //const { useEffect, useState } = wp.element;
 import axios from "axios";
 import React, { useEffect, useState, useCallback } from "react";
-//import getPayload from "../../utils/getPayload";
+import getPayload from "../../utils/getPayload";
+import { dataTypes } from "../../utils/dataTypes";
 //import Loader from "../GeneralPurpose/Loader";
 
 const ProjectsPage = ({ baseUrl }) => {
@@ -16,14 +17,14 @@ const ProjectsPage = ({ baseUrl }) => {
     }[]
   >([]);
 
-  // move to external file and make reusable
-  const getPayload = useCallback(async (baseUrl: string, path: string) => {
-    const response = await axios.get(`${baseUrl}/wp-json/cb/v1/${path}`);
-    setProjects(response.data);
+  const fetchProjects = useCallback(async (baseUrl: string, path: string) => {
+    const response = await getPayload(baseUrl, path);
+    setProjects(response);
   }, []);
 
   useEffect(() => {
-    getPayload(baseUrl, "projects");
+    //calling async on useEffect forces it to return a promise instead of a cleanup function
+    fetchProjects(baseUrl, dataTypes.projects);
   }, []);
 
   //console.log(projects);
@@ -46,7 +47,9 @@ const ProjectsPage = ({ baseUrl }) => {
         </h2>
 
         <div id="projects" className="grid">
-          {renderedProjects}
+          {renderedProjects.length
+            ? renderedProjects
+            : "There was an issue. Please refresh the page."}
         </div>
       </div>
     </>

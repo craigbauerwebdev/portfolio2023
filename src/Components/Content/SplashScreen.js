@@ -9,7 +9,7 @@ const SplashScreen = ({ baseUrl }) => {
     setTimeout(() => {
       // change setTimeout to when data is loaded
       setTop("-100vh");
-    }, 10000);
+    }, 5000);
     const messages = [
       "Fetching Data",
       "Testing Code",
@@ -19,7 +19,7 @@ const SplashScreen = ({ baseUrl }) => {
     setInterval(() => {
       setMessage(messages[i]);
       i++;
-    }, 2000);
+    }, 1000);
   }, []);
 
   return (
