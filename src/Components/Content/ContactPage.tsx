@@ -5,7 +5,7 @@ import { useContext } from "react";
 import DataContext from "../../Context/pageData";
 import { DataModel } from "../../Interfaces/Interfaces";
 
-const ContactPage: React.FC<{ baseUrl: string }> = ({ baseUrl }) => {
+const ContactPage: React.FC = () => {
   const { contact_text } = useContext<DataModel>(DataContext);
   return (
     <>

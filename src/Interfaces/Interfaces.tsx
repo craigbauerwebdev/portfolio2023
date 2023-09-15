@@ -20,5 +20,5 @@ export const DataDefaultValue = {
   contact_text: "",
 };
 
-/* movieData: MovieObject,
-    setMovieData: (movieData: MovieObject) => void */
+/* data: Model,
+    prop: (prop: Model) => void */

@@ -8,12 +8,15 @@ import ProjectsPage from "./Components/Content/ProjectsPage";
 import ContactPage from "./Components/Content/ContactPage";
 import Footer from "./Components/Footer/Footer";
 import SplashScreen from "./Components/Content/SplashScreen";
-//import Loader from "./Components/GeneralPurpose/Loader";
+// @ts-ignore
+import useBaseUrl from "./hooks/use-base-url";
 
 const App: React.FC = () => {
-  const baseUrl: string = location.href.includes("localhost")
+  const baseUrl = useBaseUrl();
+  console.log(baseUrl);
+  /* const baseUrl: string = location.href.includes("localhost")
     ? "http://localhost:8888/portfolio"
-    : "https://craigbauer.dev";
+    : "https://craigbauer.dev"; */
 
   return (
     <div>
@@ -24,7 +27,7 @@ const App: React.FC = () => {
         <AboutPage baseUrl={baseUrl} />
         <ExperiencePage />
         <ProjectsPage baseUrl={baseUrl} />
-        <ContactPage baseUrl={baseUrl} />
+        <ContactPage />
       </main>
       <Footer baseUrl={baseUrl} />
     </div>
