@@ -1,6 +1,6 @@
-const { useEffect, useState } = wp.element;
+import React from "react";
 
-const Social = (baseUrl) => {
+const Social = () => {
   return (
     <>
       <a href="https://github.com/craigbauerwebdev" target="_blank">

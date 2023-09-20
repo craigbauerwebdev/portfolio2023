@@ -1,4 +1,4 @@
-const { useEffect, useState } = wp.element;
+import React, {useState} from "react";
 
 const ExperiencePage = () => {
   const [activeSlide, setActiveSlide] = useState("1");
@@ -16,7 +16,7 @@ const ExperiencePage = () => {
     <>
       <div id="experience-page" className="experience-page">
         <h2>
-          <span class="yellow">02.</span> Where I've Worked
+          <span className="yellow">02.</span> Where I've Worked
         </h2>
         <div className="container">
           <div className="tabs">

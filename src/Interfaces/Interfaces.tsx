@@ -20,5 +20,16 @@ export const DataDefaultValue = {
   contact_text: "",
 };
 
+export interface DataContextObjModel {
+  data: DataModel;
+  baseUrl: string;
+  env: string;
+}
+
+export const ContextDefaultValue = {
+  data: DataDefaultValue,
+  baseUrl: "",
+  env: "",
+};
 /* data: Model,
     prop: (prop: Model) => void */

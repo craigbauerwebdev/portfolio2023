@@ -1,7 +1,8 @@
-const { useEffect, useState } = wp.element;
+//const { useEffect, useState } = wp.element;
+import React, { useState, useEffect } from "react";
 
-const SplashScreen = ({ baseUrl }) => {
-  const [top, setTop] = useState(0);
+const SplashScreen: React.FC<{ baseUrl: string }> = ({ baseUrl }) => {
+  const [top, setTop] = useState("");
   const [message, setMessage] = useState("loading");
 
   useEffect(() => {
@@ -24,10 +25,10 @@ const SplashScreen = ({ baseUrl }) => {
 
   return (
     <>
-      <div class="intro" style={{ top: top }}>
-        <div class="intro-logo">
+      <div className="intro" style={{ top: top }}>
+        <div className="intro-logo">
           <img
-            class="pulse"
+            className="pulse"
             alt="CB logo"
             src={`${baseUrl}/wp-content/themes/portfolio/images/cb-logo1.png`}
           />

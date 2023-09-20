@@ -1,11 +1,13 @@
 //import { Interface } from "readline";
-import React from "react";
+import React, { useContext } from "react";
 import Buttons from "../GeneralPurpose/Buttons";
+import DataContext from "../../Context/pageData";
+import { DataModel } from "../../Interfaces/Interfaces";
 
-/* Interface HomePageProps {
-  baseUrl: string
-} */
 const HomePage = () => {
+  const { greeting, tag_line, short_description } = useContext<DataModel>(
+    DataContext
+  );
   /* const scrollTo = () => {
     const elmntToView = document.getElementById("experience-page");
     elmntToView.scrollIntoView();
@@ -14,15 +16,11 @@ const HomePage = () => {
     <>
       <div id="home-page" className="home-page">
         <b>
-          <p className="yellow">Hi, my name is</p>
+          <p className="yellow">{greeting}</p>
         </b>
         <h1>Craig Bauer.</h1>
-        <h2>I build things for the web.</h2>
-        <p>
-          I’m a software engineer specializing in building (and occasionally
-          designing) exceptional digital experiences. Currently, I’m focused on
-          ReactJS, Web3 and Unity.
-        </p>
+        <h2>{tag_line}</h2>
+        <p>{short_description}</p>
         <Buttons />
       </div>
     </>

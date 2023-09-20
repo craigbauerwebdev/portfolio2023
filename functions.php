@@ -16,12 +16,12 @@ add_filter( 'show_admin_bar', 'js_hide_admin_bar' );
 		?> 
 		<style type="text/css"> 
       body.login {
-        background: blue;
-        /* background-image: url(<?php echo get_template_directory_uri(); ?>/images/pink-tartan-bkg.jpg);
+        background-color: #0a192f;
+        background-image: url(<?php echo get_template_directory_uri(); ?>/images/home-bkg.png);
         background-repeat: repeat; */
       }
       body.login div#login h1 a {
-        background-image: url(<?php echo get_template_directory_uri(); ?>/images/tb-logo-dark.png);
+        background-image: url(<?php echo get_template_directory_uri(); ?>/images/cb-logo1.png);
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
@@ -48,12 +48,12 @@ add_filter( 'show_admin_bar', 'js_hide_admin_bar' );
         display: none;
       }
       body.login .button-primary {
-        background: #405363;
-        border: 1px solid #405363;
+        background: #1273b9; /* #405363; */
+        border: 1px solid #1273b9;
       }
       body.login .button-primary:hover {
-        background: #405363;
-        border: 1px solid #405363;
+        background: #ee3074;
+        border: 1px solid #ee3074;
       }
        body.login input[type=text] {
         font-size: 30px;
