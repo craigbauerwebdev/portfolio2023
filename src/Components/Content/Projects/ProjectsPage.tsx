@@ -1,8 +1,8 @@
 //const { useEffect, useState } = wp.element;
 import axios from "axios";
 import React, { useEffect, useState, useCallback } from "react";
-import getPayload from "../../utils/getPayload";
-import { dataTypes } from "../../utils/dataTypes";
+import getPayload from "../../../utils/getPayload";
+import { dataTypes } from "../../../utils/dataTypes";
 //import Loader from "../GeneralPurpose/Loader";
 
 const ProjectsPage = ({ baseUrl }) => {

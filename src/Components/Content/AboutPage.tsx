@@ -3,7 +3,7 @@ import DataContext from "../../Context/pageData";
 import { DataModel } from "../../Interfaces/Interfaces";
 
 const AboutPage: React.FC<{ baseUrl: string }> = ({ baseUrl }) => {
-  const { bio_pic, full_bio } = useContext<DataModel>(DataContext);
+  const { bio_pic, full_bio, tech_logos } = useContext<DataModel>(DataContext);
 
   return (
     <>
@@ -19,26 +19,37 @@ const AboutPage: React.FC<{ baseUrl: string }> = ({ baseUrl }) => {
               src={bio_pic}
             />
             <div className="dev-icons">
-              <img
-                alt="ReactJS logo"
-                className="logo"
-                src={`${baseUrl}/wp-content/themes/portfolio/images/icons/react.png`}
-              />
-              <img
-                alt="Redux logo"
-                className="logo"
-                src={`${baseUrl}/wp-content/themes/portfolio/images/icons/redux.png`}
-              />
-              <img
-                alt="nodeJS logo"
-                className="logo"
-                src={`${baseUrl}/wp-content/themes/portfolio/images/icons/node.png`}
-              />
-              <img
-                alt="WordPress logo"
-                className="logo"
-                src={`${baseUrl}/wp-content/themes/portfolio/images/icons/wordpress.png`}
-              />
+              {tech_logos?.tech_logo_1 && (
+                <img
+                  alt="tech logo"
+                  className="logo"
+                  src={tech_logos?.tech_logo_1}
+                />
+              )}
+              {tech_logos?.tech_logo_2 && (
+                <img
+                  alt="tech logo"
+                  className="logo"
+                  src={tech_logos?.tech_logo_2}
+                  //src={`${baseUrl}/wp-content/themes/portfolio/images/icons/redux.png`}
+                />
+              )}
+              {tech_logos?.tech_logo_3 && (
+                <img
+                  alt="tech logo"
+                  className="logo"
+                  src={tech_logos?.tech_logo_3}
+                  //src={`${baseUrl}/wp-content/themes/portfolio/images/icons/node.png`}
+                />
+              )}
+              {tech_logos?.tech_logo_4 && (
+                <img
+                  alt="tech logo"
+                  className="logo"
+                  src={tech_logos?.tech_logo_4}
+                  //src={`${baseUrl}/wp-content/themes/portfolio/images/icons/wordpress.png`}
+                />
+              )}
             </div>
           </div>
           <div className="right">

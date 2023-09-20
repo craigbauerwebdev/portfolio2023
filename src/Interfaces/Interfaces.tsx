@@ -7,6 +7,12 @@ export interface DataModel {
   full_bio: string;
   bio_pic: string;
   contact_text: string;
+  tech_logos: {
+    tech_logo_1: string;
+    tech_logo_2: string;
+    tech_logo_3: string;
+    tech_logo_4: string;
+  };
 }
 
 export const DataDefaultValue = {
@@ -31,5 +37,3 @@ export const ContextDefaultValue = {
   baseUrl: "",
   env: "",
 };
-/* data: Model,
-    prop: (prop: Model) => void */

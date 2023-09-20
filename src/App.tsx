@@ -4,7 +4,7 @@ import Header from "./Components/Header/Header";
 import HomePage from "./Components/Content/HomePage";
 import AboutPage from "./Components/Content/AboutPage";
 import ExperiencePage from "./Components/Content/Experience/ExperiencePage";
-import ProjectsPage from "./Components/Content/ProjectsPage";
+import ProjectsPage from "./Components/Content/Projects/ProjectsPage";
 import ContactPage from "./Components/Content/ContactPage";
 import Footer from "./Components/Footer/Footer";
 import SplashScreen from "./Components/Content/SplashScreen";
