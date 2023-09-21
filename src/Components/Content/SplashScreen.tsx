@@ -3,20 +3,15 @@ import React, { useState, useEffect } from "react";
 
 const SplashScreen: React.FC<{ baseUrl: string }> = ({ baseUrl }) => {
   const [top, setTop] = useState("");
-  const [message, setMessage] = useState("loading");
+  const [message, setMessage] = useState("Fetching Data");
 
   useEffect(() => {
     let i = 0;
     setTimeout(() => {
       // change setTimeout to when data is loaded
       setTop("-100vh");
-    }, 5000);
-    const messages = [
-      "Fetching Data",
-      "Testing Code",
-      "Compiling Code",
-      "Building UI",
-    ];
+    }, 4000);
+    const messages = ["Testing Code", "Compiling", "Building UI"];
     setInterval(() => {
       setMessage(messages[i]);
       i++;

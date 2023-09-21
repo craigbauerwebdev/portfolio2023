@@ -9,7 +9,7 @@ const Buttons = () => {
   return (
     <div className="large-buttons">
       <Button label="Resume" url={resume_url} type="link" />
-      <Button label="Contact" url="contact_email" type="email" />
+      <Button label="Contact" url={contact_email} type="email" />
     </div>
   );
 };

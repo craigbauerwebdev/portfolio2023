@@ -1,4 +1,3 @@
-//const { useEffect, useState } = wp.element;
 import React from "react";
 import Buttons from "../GeneralPurpose/Buttons";
 import { useContext } from "react";

@@ -2,7 +2,6 @@ import React from "react";
 
 const Button = ({ label, url, type }) => {
   const getUrl = (url: string, type: string) => {
-    //type email
     if (type === "email") {
       return `mailto:${url}`;
     }
