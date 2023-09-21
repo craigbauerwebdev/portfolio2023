@@ -1,8 +1,9 @@
 //const { useEffect, useState } = wp.element;
-import axios from "axios";
+//import axios from "axios";
 import React, { useEffect, useState, useCallback } from "react";
 import getPayload from "../../../utils/getPayload";
 import { dataTypes } from "../../../utils/dataTypes";
+import ProjectCard from "./ProjectCard";
 //import Loader from "../GeneralPurpose/Loader";
 
 const ProjectsPage = ({ baseUrl }) => {
@@ -27,16 +28,8 @@ const ProjectsPage = ({ baseUrl }) => {
     fetchProjects(baseUrl, dataTypes.projects);
   }, []);
 
-  //console.log(projects);
-
   const renderedProjects = projects?.map((project) => {
-    return (
-      //make a card component
-      <a href={project.project_url} className="tile" target="blank">
-        <h2>{project.title}</h2>
-        <p>{project.description}</p>
-      </a>
-    );
+    return <ProjectCard project={project} />;
   });
 
   return (
