@@ -1,9 +1,12 @@
-import React, {useState} from "react";
+import React, { useState, useEffect, useCallback } from "react";
+import { dataTypes } from "../../../utils/dataTypes";
+import getPayload from "../../../utils/getPayload";
 
-const ExperiencePage = () => {
+const ExperiencePage = ({ baseUrl }) => {
   const [activeSlide, setActiveSlide] = useState("1");
+  const [experience, setExperience] = useState([]);
 
-  const handleClick = (e) => {
+  const handleClick = (e: any) => {
     e.preventDefault();
     const tabNum = e.target.dataset.tab;
     if (!tabNum) {
@@ -11,6 +14,17 @@ const ExperiencePage = () => {
     }
     setActiveSlide(tabNum);
   };
+
+  // Fetch Data
+  const fetchExperience = useCallback(async (baseUrl: string, path: string) => {
+    const response = await getPayload(baseUrl, path);
+    setExperience(response);
+  }, []);
+
+  useEffect(() => {
+    //calling async on useEffect forces it to return a promise instead of a cleanup function
+    fetchExperience(baseUrl, dataTypes.experience);
+  }, []);
 
   return (
     <>
@@ -65,8 +79,6 @@ const ExperiencePage = () => {
             >
               Freelance
             </a>
-
-            {/* <span className="highlighter"></span> */}
           </div>
 
           <div className="content">

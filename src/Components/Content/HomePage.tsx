@@ -8,10 +8,6 @@ const HomePage = () => {
   const { greeting, tag_line, short_description } = useContext<DataModel>(
     DataContext
   );
-  /* const scrollTo = () => {
-    const elmntToView = document.getElementById("experience-page");
-    elmntToView.scrollIntoView();
-  }; */
   return (
     <>
       <div id="home-page" className="home-page">

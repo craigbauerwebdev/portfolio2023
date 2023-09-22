@@ -1,4 +1,3 @@
-//const { useEffect, useState } = wp.element;
 import React from "react";
 import Header from "./Components/Header/Header";
 import HomePage from "./Components/Content/HomePage";
@@ -13,7 +12,6 @@ import SplashScreen from "./Components/Content/SplashScreen";
 
 const App: React.FC = () => {
   //const baseUrl = useBaseUrl({});
-  //console.log(baseUrl);
   const baseUrl: string = location.href.includes("localhost")
     ? "http://localhost:8888/portfolio"
     : "https://craigbauer.dev";
@@ -24,12 +22,12 @@ const App: React.FC = () => {
       <Header baseUrl={baseUrl} />
       <main>
         <HomePage />
-        <AboutPage baseUrl={baseUrl} />
-        <ExperiencePage />
+        <AboutPage />
+        <ExperiencePage baseUrl={baseUrl} />
         <ProjectsPage baseUrl={baseUrl} />
         <ContactPage />
       </main>
-      <Footer baseUrl={baseUrl} />
+      <Footer />
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import DataContext from "../../Context/pageData";
 import { DataModel } from "../../Interfaces/Interfaces";
 
-const AboutPage: React.FC<{ baseUrl: string }> = ({ baseUrl }) => {
+const AboutPage: React.FC = () => {
   const { bio_pic, full_bio, tech_logos } = useContext<DataModel>(DataContext);
 
   return (
@@ -31,7 +31,6 @@ const AboutPage: React.FC<{ baseUrl: string }> = ({ baseUrl }) => {
                   alt="tech logo"
                   className="logo"
                   src={tech_logos?.tech_logo_2}
-                  //src={`${baseUrl}/wp-content/themes/portfolio/images/icons/redux.png`}
                 />
               )}
               {tech_logos?.tech_logo_3 && (
@@ -39,7 +38,6 @@ const AboutPage: React.FC<{ baseUrl: string }> = ({ baseUrl }) => {
                   alt="tech logo"
                   className="logo"
                   src={tech_logos?.tech_logo_3}
-                  //src={`${baseUrl}/wp-content/themes/portfolio/images/icons/node.png`}
                 />
               )}
               {tech_logos?.tech_logo_4 && (
@@ -47,7 +45,6 @@ const AboutPage: React.FC<{ baseUrl: string }> = ({ baseUrl }) => {
                   alt="tech logo"
                   className="logo"
                   src={tech_logos?.tech_logo_4}
-                  //src={`${baseUrl}/wp-content/themes/portfolio/images/icons/wordpress.png`}
                 />
               )}
             </div>

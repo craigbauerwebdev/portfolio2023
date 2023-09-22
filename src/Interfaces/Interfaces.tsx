@@ -24,6 +24,12 @@ export const DataDefaultValue = {
   full_bio: "",
   bio_pic: "",
   contact_text: "",
+  tech_logos: {
+    tech_logo_1: "",
+    tech_logo_2: "",
+    tech_logo_3: "",
+    tech_logo_4: "",
+  },
 };
 
 export interface DataContextObjModel {
