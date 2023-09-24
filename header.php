@@ -10,11 +10,7 @@
 
 		<!-- Mobile Device Support -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
-		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet" />
-		<link href="<?php echo get_template_directory_uri(); ?>/css/index.css?ver=<?php echo rand(111,999)?>" rel="stylesheet" />
-		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-		<!-- <link href="./build/css/styles.css" rel="stylesheet" /> -->
+		<!-- <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"> -->
 		
 		
 		<?php wp_head(); ?>

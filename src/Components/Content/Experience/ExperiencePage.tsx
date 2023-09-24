@@ -34,6 +34,7 @@ const ExperiencePage = ({ baseUrl }) => {
         </h2>
         <div className="container">
           <div className="tabs">
+            {/* Map through exp for tabs */}
             <a
               style={{ background: activeSlide === "1" ? "yellow" : "grey" }}
               className="tab tab-1"
@@ -82,6 +83,7 @@ const ExperiencePage = ({ baseUrl }) => {
           </div>
 
           <div className="content">
+            {/* Map through exp for slides */}
             {activeSlide === "1" && (
               <div className="content__section">
                 <h2>Ernst & Young</h2>
