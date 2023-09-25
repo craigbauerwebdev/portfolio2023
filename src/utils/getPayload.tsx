@@ -8,7 +8,7 @@ const getPayload = async (baseUrl: string, path: string) => {
       return response.data.acf;
     case dataTypes.experience:
       const expData = response.data.map((job) => {
-        return { ...job.acf, id: job.id };
+        return { ...job.acf, id: job.id.toString() };
       });
       return expData;
     default:
