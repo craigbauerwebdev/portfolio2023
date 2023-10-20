@@ -28,6 +28,7 @@ const Header: React.FC<HeaderProps> = ({ baseUrl }) => {
     <>
       <header>
         <img
+          loading="lazy"
           onClick={() => scrollTo("home-page", "desktop")}
           alt="CBD logo"
           className="logo"

@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { dataTypes } from "../../../utils/dataTypes";
 import getPayload from "../../../utils/getPayload";
+import Tab from "./Tab";
+import Slide from "./Slide";
 
 const ExperiencePage = ({ baseUrl }) => {
   const [activeSlide, setActiveSlide] = useState("");
@@ -13,7 +15,7 @@ const ExperiencePage = ({ baseUrl }) => {
     }[]
   >([]);
 
-  const handleClick = (e: any) => {
+  const handleClick = (e) => {
     e.preventDefault();
     const tabNum = e.target.dataset.tab;
     if (!tabNum) {
@@ -34,30 +36,12 @@ const ExperiencePage = ({ baseUrl }) => {
   }, []);
 
   const renderedTabs = experience.map((job) => {
-    return (
-      <a
-        style={{
-          background: activeSlide === job.id ? "yellow" : "grey",
-        }}
-        className="tab"
-        href="#"
-        onClick={(e) => handleClick(e)}
-        data-tab={job.id}
-      >
-        {job.company_name}
-      </a>
-    );
+    return <Tab activeSlide={activeSlide} job={job} onClick={handleClick} />;
   });
 
   const renderedSlides = experience.map((job) => {
     return (
-      activeSlide === job.id && (
-        <div className="content__section">
-          <h2>{job.company_name}</h2>
-          <h3>{job.date_range}</h3>
-          <div dangerouslySetInnerHTML={{ __html: job.accomplishments }} />
-        </div>
-      )
+      <Slide job={job} activeSlide={activeSlide} />
     );
   });
 
