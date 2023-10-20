@@ -15,7 +15,7 @@ const ExperiencePage = ({ baseUrl }) => {
     }[]
   >([]);
 
-  const handleClick = (e) => {
+  const handleClick = (e: any) => {
     e.preventDefault();
     const tabNum = e.target.dataset.tab;
     if (!tabNum) {
@@ -40,9 +40,7 @@ const ExperiencePage = ({ baseUrl }) => {
   });
 
   const renderedSlides = experience.map((job) => {
-    return (
-      <Slide job={job} activeSlide={activeSlide} />
-    );
+    return <Slide job={job} activeSlide={activeSlide} />;
   });
 
   return (
