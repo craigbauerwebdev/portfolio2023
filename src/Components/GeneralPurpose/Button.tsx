@@ -1,14 +1,23 @@
 import React from "react";
 
-const Button = ({ label, url, type }) => {
-  const getUrl = (url: string, type: string) => {
-    if (type === "email") {
-      return `mailto:${url}`;
-    }
-    return url;
+interface ButtonProps {
+  label: string;
+  url: string;
+  type?: "email" | "link"; // Restricting `type` to valid values
+}
+
+const Button: React.FC<ButtonProps> = ({ label, url, type = "link" }) => {
+  const getUrl = (url: string, type: "email" | "link") => {
+    return type === "email" ? `mailto:${url}` : url;
   };
+
   return (
-    <a className="lg-button" href={getUrl(url, type)} target="_blank">
+    <a
+      className="lg-button"
+      href={getUrl(url, type)}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <button>
         <b>{label}</b>
       </button>

@@ -8,7 +8,7 @@ p.welcome {
   color: #ffffff;
 }
 header {
-  background: rgba(10, 25, 47, 0.9);
+  background: rgba(0, 0, 0, 0.9);
   position: sticky;
   position: -webkit-sticky;
   top: 0;
@@ -75,7 +75,7 @@ header .desktop-menu svg {
   position: fixed;
   width: 100%;
   top: 92px;
-  background: rgba(10, 25, 47, 0.9);
+  background: rgba(0, 0, 0, 0.9);
   display: none;
 }
 @media only screen and (max-width: 1200px) {

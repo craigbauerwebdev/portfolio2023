@@ -20,6 +20,7 @@ const App: React.FC = () => {
     <div>
       <SplashScreen baseUrl={baseUrl} />
       <Header baseUrl={baseUrl} />
+      {/* <div className="site-wrapper"></div> */}
       <main>
         <HomePage />
         <AboutPage />
@@ -27,6 +28,7 @@ const App: React.FC = () => {
         <ProjectsPage baseUrl={baseUrl} />
         <ContactPage />
       </main>
+
       <Footer />
     </div>
   );

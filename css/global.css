@@ -10,8 +10,12 @@ html {
   scroll-behavior: smooth;
 }
 html, body {
-  background-color: #0a192f;
-  background-image: url(../images/home-bkg.png);
+  background-color: #000000;
+  background-image: url(../images/cbauerdev.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   color: #ffffff;
   -webkit-font-smoothing: antialiased;
 }
@@ -25,11 +29,16 @@ a {
 .yellow {
   color: #e6da74;
 }
+/* .site-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+} */
 main {
   padding: 0 150px;
   max-width: 1000px;
   margin: 0 auto;
-  /*background: rgba(0, 0, 0, 0.3);*/
+  background: rgba(0, 0, 0, 0.75);
 }
 @media only screen and (max-width: 1200px) {
   main {
