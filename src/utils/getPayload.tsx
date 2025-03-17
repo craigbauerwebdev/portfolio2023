@@ -1,5 +1,6 @@
 import axios from "axios";
 import { dataTypes } from "./dataTypes";
+import { sortBySortOrder } from "./sortBySortOrder";
 
 const getPayload = async (baseUrl: string, path: string) => {
   const response: any = await axios.get(`${baseUrl}${path}`);
@@ -10,7 +11,7 @@ const getPayload = async (baseUrl: string, path: string) => {
       const expData = response.data.map((job) => {
         return { ...job.acf, id: job.id.toString() };
       });
-      return expData;
+      return sortBySortOrder(expData, "asc");
     default:
       return response.data;
   }
